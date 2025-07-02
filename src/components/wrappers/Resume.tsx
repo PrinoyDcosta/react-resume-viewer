@@ -11,9 +11,10 @@ import Header from "../resume-sections/sections/header/Header"
 import { DragDropContext, Draggable, Droppable, DropResult } from "@hello-pangea/dnd"
 import { dataSource } from "../../lib/data"
 import '@ant-design/v5-patch-for-react-19';
+import '../../index.css'
 
 interface ResumeWrapperProps {
-    printableContentRef: React.RefObject<HTMLDivElement | null>,
+    printableContentRef?: React.RefObject<HTMLDivElement | null>,
     readonly?: boolean
 }
 

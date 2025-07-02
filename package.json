@@ -16,7 +16,8 @@
   "files": ["dist"],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "vite build && tsc --emitDeclarationOnly"
+    "build": "vite build && tsc --emitDeclarationOnly",
+    "start": "vite"
   },
   "repository": {
     "type": "git",
