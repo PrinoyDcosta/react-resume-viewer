@@ -1,0 +1,12 @@
+.section-underline {
+    position: relative;
+} 
+
+.section-underline::before{
+    background-color: black;
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    top: 23px
+}
