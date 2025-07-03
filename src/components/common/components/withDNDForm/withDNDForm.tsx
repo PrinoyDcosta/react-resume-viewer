@@ -90,7 +90,7 @@ export const withDNDForm = <P extends {}, T>(Component : React.ComponentType<P>,
                                     isHeaderSection ?
                                         <>
                                             <div className="flex flex-wrap" >
-                                                <div className='flex w-full border-2 p-5 m-2'>
+                                                <div className='flex w-full border-2 p-5 m-2 dark:border-white '>
                                                     <div className="w-5/6">
                                                         <Component { ...props} field={first(data)} index={0}/>
                                                     </div>
@@ -111,13 +111,13 @@ export const withDNDForm = <P extends {}, T>(Component : React.ComponentType<P>,
                                                                         <>
                                                                             <Draggable draggableId={`draggable-${index}`} index={index}>
                                                                                 {(provided, snapshot) => (
-                                                                                    <div key={index} className='flex w-full border-2 p-5 m-2' ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
+                                                                                    <div key={index} className='flex w-full border-2 p-5 m-2 dark:border-white' ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
                                                                                         <div className="w-5/6">
                                                                                         <Component { ...props} field={field} index={index}/>
                                                                                         </div>
                                                                                         <div className="w-1/6 px-3 flex justify-end">
                                                                                             <ShadcnButton 
-                                                                                                className="text-red-600 hover:text-red-600" 
+                                                                                                className="text-red-600 hover:text-red-600 hover:dark:text-red-400 dark:bg-white dark:border-neutral-400" 
                                                                                                 variant="outline" 
                                                                                                 size="icon" 
                                                                                                 onClick={() => {

@@ -15,12 +15,12 @@ export const withToolbar = <P extends {},>(Component : React.ComponentType<P>, t
                                 :
                                     <div className="pr-2 flex justify-end invisible relative -top-5 -mb-10 group-hover:visible group-hover:duration-200 group-hover:ease-in-out">
                                         <div className="flex relative gap-1 top-1">
-                                            <Button variant="outline" size="icon" onClick={setEditMode}>
+                                            <Button className=" hover:dark:text-neutral-600 dark:bg-white dark:border-neutral-400" variant="outline" size="icon" onClick={setEditMode}>
                                                 <PencilSquareIcon/>
                                             </Button>
-                                            <Button variant="outline" size="icon" onClick={() => {}}><ArrowUpIcon/></Button>
-                                            <Button variant="outline" size="icon" onClick={() => {}}><ArrowDownIcon/></Button>
-                                            <Button className="text-red-600 hover:text-red-600" variant="outline" size="icon" onClick={() => {}}><TrashIcon/></Button>
+                                            <Button className=" hover:dark:text-neutral-600 dark:bg-white dark:border-neutral-400" variant="outline" size="icon" onClick={() => {}}><ArrowUpIcon/></Button>
+                                            <Button className=" hover:dark:text-neutral-600 dark:bg-white dark:border-neutral-400" variant="outline" size="icon" onClick={() => {}}><ArrowDownIcon/></Button>
+                                            <Button className="text-red-600 hover:text-red-600 hover:dark:text-red-400 dark:bg-white dark:border-neutral-400" variant="outline" size="icon" onClick={() => {}}><TrashIcon/></Button>
                                         </div>
                                     </div>
                             }

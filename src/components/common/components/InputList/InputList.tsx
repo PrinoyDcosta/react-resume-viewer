@@ -49,15 +49,15 @@ const InputList = ({
                             />
                         </div>
                         <div className="flex gap-2 w-1/3">
-                            <ShadcnButton type='button' className="text-red-600 hover:text-red-600" variant="outline" size="icon" onClick={() => onRemove(index)}><TrashIcon/></ShadcnButton>
-                            {index !== 0 && <ShadcnButton type='button' variant="outline" size="icon" onClick={() => onPositionChange(index, index - 1)}><ArrowUpIcon/></ShadcnButton> }
-                            {index < value.length - 1 && <ShadcnButton type='button' variant="outline" size="icon" onClick={() => onPositionChange(index, index + 1)}><ArrowDownIcon/></ShadcnButton>}
+                            <ShadcnButton type='button' className="text-red-600 hover:text-red-600 hover:dark:text-red-400 dark:bg-white dark:border-neutral-400" variant="outline" size="icon" onClick={() => onRemove(index)}><TrashIcon/></ShadcnButton>
+                            {index !== 0 && <ShadcnButton className=" hover:dark:text-neutral-600 dark:bg-white dark:border-neutral-400" type='button' variant="outline" size="icon" onClick={() => onPositionChange(index, index - 1)}><ArrowUpIcon/></ShadcnButton> }
+                            {index < value.length - 1 && <ShadcnButton className=" hover:dark:text-neutral-600 dark:bg-white dark:border-neutral-400" type='button' variant="outline" size="icon" onClick={() => onPositionChange(index, index + 1)}><ArrowDownIcon/></ShadcnButton>}
                         </div>
                     </div>)
             }
         </div>
         <div className="flex justify-center pt-2">
-            <ShadcnButton type='button' variant="outline" onClick={onAdd}><PlusIcon/>Add line</ShadcnButton>
+            <ShadcnButton className=" hover:dark:text-neutral-600 dark:bg-white dark:border-neutral-400" type='button' variant="outline" onClick={onAdd}><PlusIcon/>Add line</ShadcnButton>
         </div>
     </div>)
 }
