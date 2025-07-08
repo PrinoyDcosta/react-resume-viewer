@@ -19,7 +19,7 @@ const HeaderFormFields: FC<IHeaderFormFieldProps> = ({
                     rules={[{ required: true, message: 'Please enter your full name!' }]}
                     initialValue={field.fullName}
                 >
-                    <Input placeholder="Enter job title"/>
+                    <Input placeholder="Enter your full name"/>
                 </Form.Item>
                 <Form.Item 
                     label="Location"
@@ -27,7 +27,7 @@ const HeaderFormFields: FC<IHeaderFormFieldProps> = ({
                     rules={[{ required: true, message: 'Please enter your location!' }]}
                     initialValue={field.location}
                 >
-                    <Input placeholder="Enter company name"/>
+                    <Input placeholder="Enter your location"/>
                 </Form.Item>
                 <Form.Item 
                     label="Email"
@@ -35,7 +35,7 @@ const HeaderFormFields: FC<IHeaderFormFieldProps> = ({
                     rules={[{ required: true, message: 'Please enter your email!' }]}
                     initialValue={field.email}
                 >
-                    <Input placeholder="Enter company location"/>
+                    <Input placeholder="Enter your contact email"/>
                 </Form.Item>
                 <Form.Item 
                     label="Phone Number"
@@ -43,7 +43,7 @@ const HeaderFormFields: FC<IHeaderFormFieldProps> = ({
                     rules={[{ required: true, message: 'Please enter your phone number!' }]}
                     initialValue={field.phoneNumber}
                 >
-                    <Input placeholder="Enter phone number"/>
+                    <Input placeholder="Enter your phone number"/>
                 </Form.Item>
                 <Form.Item 
                     label="Github Url"
@@ -51,7 +51,7 @@ const HeaderFormFields: FC<IHeaderFormFieldProps> = ({
                     //rules={[{ required: true, message: 'Please enter your github url!' }]}
                     initialValue={field.githubUrl}
                 >
-                    <Input placeholder="Enter phone number"/>
+                    <Input placeholder="Enter your Github URL"/>
                 </Form.Item>
                 <Form.Item 
                     label="Linkedin Url"
@@ -59,7 +59,7 @@ const HeaderFormFields: FC<IHeaderFormFieldProps> = ({
                     //rules={[{ required: true, message: 'Please enter your linkedin url!' }]}
                     initialValue={field.linkedinUrl}
                 >
-                    <Input placeholder="Enter linkedin url"/>
+                    <Input placeholder="Enter your Linkedin URL"/>
                 </Form.Item>
     </>
 }
