@@ -1,7 +1,9 @@
 import { Button as ShadcnButton } from "../../../ui/button"
 import { PlusIcon, TrashIcon } from "@heroicons/react/16/solid"
 import { useEffect, useState } from "react"
-import { Button, Form, Input } from "antd"
+import Form from 'antd/es/form'
+import Input from 'antd/es/input'
+import Button from 'antd/es/button'
 import { first, pullAt } from "lodash-es"
 import { DragDropContext, Draggable, Droppable, DropResult } from "@hello-pangea/dnd"
 

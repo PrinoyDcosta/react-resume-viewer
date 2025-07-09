@@ -16,12 +16,12 @@ import '../../index.css'
 interface ResumeWrapperProps {
     printableContentRef?: React.RefObject<HTMLDivElement | null>,
     readonly?: boolean
+    data: Array<ISection>
+    setData: React.Dispatch<React.SetStateAction<ISection[]>>
 }
 
-const Resume = ({ printableContentRef, readonly = false } : ResumeWrapperProps) => { 
+const Resume = ({ printableContentRef, data, setData, readonly = false } : ResumeWrapperProps) => { 
     
-    const [data, setData] = useState<Array<ISection>>(dataSource)
-
     const updateData = (type: SectionType, newData?: Array<SectionTypes>, title?: string) => {
         let sectionToUpdate = data.find(item => item.type === type)
         if(isUndefined(sectionToUpdate))

@@ -1,4 +1,4 @@
-import { Input } from "antd"
+import Input from 'antd/es/input'
 import { ArrowDownIcon, ArrowUpIcon, PlusIcon, TrashIcon } from "@heroicons/react/16/solid"
 import { Button as ShadcnButton } from "../../../ui/button"
 

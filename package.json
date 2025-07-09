@@ -1,6 +1,6 @@
 {
   "name": "react-resume-viewer",
-  "version": "0.0.8",
+  "version": "0.0.10",
   "description": "This is a React component written in Typescript and TailWindCSS that can be used to view or edit your resume.",
   "main": "dist/react-resume-viewer.umd.js",
   "module": "dist/react-resume-viewer.es.js",
@@ -38,11 +38,6 @@
     "@hello-pangea/dnd": "^18.0.1",
     "@heroicons/react": "^2.2.0",
     "@hookform/resolvers": "^4.1.2",
-    "@lexical/code": "^0.27.2",
-    "@lexical/list": "^0.27.2",
-    "@lexical/react": "^0.27.2",
-    "@lexical/selection": "^0.27.2",
-    "@lexical/utils": "^0.27.2",
     "@radix-ui/react-dialog": "^1.1.6",
     "@radix-ui/react-label": "^2.1.2",
     "@radix-ui/react-select": "^2.1.6",
@@ -54,13 +49,11 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "dayjs": "^1.11.13",
-    "lexical": "^0.27.2",
     "lucide-react": "^0.477.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.54.2",
     "react-router": "^6.0.0",
-    "react-to-print": "^3.0.5",
     "zod": "^3.24.2"
   },
   "devDependencies": {
@@ -83,5 +76,6 @@
     "typescript-eslint": "^8.24.1",
     "vite": "^6.2.0",
     "vite-bundle-analyzer": "^1.0.0"
-  }
+  },
+  "keywords": ["resume", "cv", "viewer" , "builder", "editor", "react", "typescript", "tailwindcss", "tailwind", "shadcn", "portfolio"]
 }

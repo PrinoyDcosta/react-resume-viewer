@@ -1,4 +1,6 @@
-import { DatePicker, Form, Input } from "antd"
+import Form from 'antd/es/form'
+import Input from 'antd/es/input'
+import DatePicker from 'antd/es/date-picker'
 import dayjs from "dayjs"
 import { FC } from "react"
 import { IEducation } from "../../../common/constants/section-consts"

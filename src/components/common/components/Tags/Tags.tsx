@@ -1,4 +1,5 @@
-import { Input, Tag } from "antd"
+import Tag from 'antd/es/tag'
+import Input from 'antd/es/input'
 import { isArray, isEmpty } from "lodash-es"
 import { useEffect, useState } from "react"
 

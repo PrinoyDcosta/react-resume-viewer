@@ -1,4 +1,5 @@
-import { Form, Select } from "antd"
+import Form from 'antd/es/form'
+import Select from 'antd/es/select'
 import { FC } from "react"
 import { ILanguage } from "../../../common/constants/section-consts"
 

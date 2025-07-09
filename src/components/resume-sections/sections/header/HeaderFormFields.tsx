@@ -1,4 +1,5 @@
-import { Form, Input } from "antd"
+import Form from 'antd/es/form'
+import Input from 'antd/es/input'
 import { FC } from "react"
 import { IHeader } from "../../../common/constants/section-consts"
 
