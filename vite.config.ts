@@ -3,6 +3,7 @@ import { fileURLToPath } from 'node:url'
 import { defineConfig } from 'vite'
  import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite'
+import { analyzer } from 'vite-bundle-analyzer'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
@@ -18,11 +19,12 @@ export default defineConfig({
     },
     rollupOptions: {
         // Externalize dependencies that should not be bundled
-        external: ['react', 'react-dom'],
+        external: ['react', 'react-dom', 'react-dom/client'],
         output: {
           globals: {
             react: 'React',
             'react-dom': 'ReactDOM',
+            'react-dom/client': 'ReactDOMClient'
           },
         },
       },

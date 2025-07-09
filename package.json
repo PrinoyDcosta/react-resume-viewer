@@ -1,22 +1,26 @@
 {
   "name": "react-resume-viewer",
-  "version": "0.0.5",
+  "version": "0.0.8",
   "description": "This is a React component written in Typescript and TailWindCSS that can be used to view or edit your resume.",
   "main": "dist/react-resume-viewer.umd.js",
   "module": "dist/react-resume-viewer.es.js",
-  "types": "dist/index.d.ts",
+  "types": "dist/types/index.d.ts",
   "type": "module",
   "exports": {
-    ".":{
+    ".": {
+      "types": "./dist/types/index.d.ts",
       "import": "./dist/react-resume-viewer.es.js",
       "require": "./dist/react-resume-viewer.umd.js"
     },
     "./dist/*.css": "./dist/*.css"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "vite build && tsc --emitDeclarationOnly",
+    "analyze": "vite build --debug",
     "start": "vite"
   },
   "repository": {
@@ -77,6 +81,7 @@
     "tailwindcss-animate": "^1.0.7",
     "typescript": "~5.7.2",
     "typescript-eslint": "^8.24.1",
-    "vite": "^6.2.0"
+    "vite": "^6.2.0",
+    "vite-bundle-analyzer": "^1.0.0"
   }
 }
