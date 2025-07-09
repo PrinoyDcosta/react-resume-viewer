@@ -33,12 +33,13 @@
     "moduleResolution": "Node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
+    "noEmit": false,
     "jsx": "react-jsx",
     "declaration": true, // Important for generating .d.ts files
     "emitDeclarationOnly": true, // Emit only declarations, no JS output from tsc
-    "outDir": "./dist/types" // Output directory for declaration files
+    "outDir": "dist/types", // Output directory for declaration 
+    "rootDir": "src"
   },
-  "include": ["src"],
+  "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]
 }
