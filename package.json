@@ -1,6 +1,6 @@
 {
   "name": "react-resume-viewer",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "This is a React component written in Typescript and TailWindCSS that can be used to view or edit your resume.",
   "main": "dist/react-resume-viewer.umd.js",
   "module": "dist/react-resume-viewer.es.js",

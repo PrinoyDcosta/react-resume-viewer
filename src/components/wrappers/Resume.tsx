@@ -9,7 +9,6 @@ import WorkExperience from "../resume-sections/sections/experience/WorkExperienc
 import Project from "../resume-sections/sections/projects/Projects"
 import Header from "../resume-sections/sections/header/Header"
 import { DragDropContext, Draggable, Droppable, DropResult } from "@hello-pangea/dnd"
-import { dataSource } from "../../lib/data"
 import '@ant-design/v5-patch-for-react-19';
 import '../../index.css'
 
