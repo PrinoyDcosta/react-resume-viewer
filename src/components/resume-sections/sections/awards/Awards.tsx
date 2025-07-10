@@ -13,16 +13,20 @@ interface AwardsProps {
     data: Array<IAwards>
     updateData: (newData?: Array<IAwards>, title?: string) => void
     readonly?: boolean
+    index: number
+    moveSection: (currentPosition: number, newPosition: number) => void
 }
 
 const Awards: FC<AwardsProps> = ({
     data,
     title,
     updateData,
-    readonly
+    readonly,
+    index, 
+    moveSection
 }) => {
     const [isEditMode, setIsEditMode] = useState(false)
-    const ComponentToRender = withToolbar(AwardsViewer, title, () => setIsEditMode(true), readonly)
+    const ComponentToRender = withToolbar(AwardsViewer, title, () => setIsEditMode(true), index, moveSection, readonly)
 
     const updateSkills = (newData: Array<IAwards>, title?: string) => {
         let result = newData.map(item => {

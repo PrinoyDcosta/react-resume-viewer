@@ -40,13 +40,15 @@ const Resume = ({ printableContentRef, data, setData, readonly = false } : Resum
         })
     }
 
-    const getSection = (item: ISection) => {
+    const getSection = (item: ISection, index: number) => {
             if(item.type === SectionType.SKILLS)
                 return <Skills 
                             data={item.items as ISkills[]} 
                             title={item.title} 
                             updateData={(newData?: Array<SectionTypes>, title?: string) => updateData(item.type, newData, title)}
                             readonly={readonly}
+                            index={index}
+                            moveSection={moveSection}
                         />
             if(item.type === SectionType.EXPERIENCE)
                 return <WorkExperience 
@@ -54,6 +56,8 @@ const Resume = ({ printableContentRef, data, setData, readonly = false } : Resum
                             title={item.title} 
                             updateData={(newData?: Array<SectionTypes>, title?: string) => updateData(item.type, newData, title)}
                             readonly={readonly}
+                            index={index}
+                            moveSection={moveSection}
                         />
             if(item.type === SectionType.AWARDS)
                 return <Awards 
@@ -61,6 +65,8 @@ const Resume = ({ printableContentRef, data, setData, readonly = false } : Resum
                             title={item.title} 
                             updateData={(newData?: Array<SectionTypes>, title?: string) => updateData(item.type, newData, title)}
                             readonly={readonly}
+                            index={index}
+                            moveSection={moveSection}
                         />
             if(item.type === SectionType.EDUCATION)
                 return <Education 
@@ -68,6 +74,8 @@ const Resume = ({ printableContentRef, data, setData, readonly = false } : Resum
                             title={item.title} 
                             updateData={(newData?: Array<SectionTypes>, title?: string) => updateData(item.type, newData, title)}
                             readonly={readonly}
+                            index={index}
+                            moveSection={moveSection}
                         />
             if(item.type === SectionType.LANGUAGES)
                 return <Languages 
@@ -75,6 +83,8 @@ const Resume = ({ printableContentRef, data, setData, readonly = false } : Resum
                             title={item.title} 
                             updateData={(newData?: Array<SectionTypes>, title?: string) => updateData(item.type, newData, title)}
                             readonly={readonly}
+                            index={index}
+                            moveSection={moveSection}
                         />
             if(item.type === SectionType.PROJECTS)
                 return <Project 
@@ -82,6 +92,8 @@ const Resume = ({ printableContentRef, data, setData, readonly = false } : Resum
                             title={item.title} 
                             updateData={(newData?: Array<SectionTypes>, title?: string) => updateData(item.type, newData, title)}
                             readonly={readonly}
+                            index={index}
+                            moveSection={moveSection}
                         />
             if(item.type === SectionType.HEADER)
                 return <Header 
@@ -89,26 +101,44 @@ const Resume = ({ printableContentRef, data, setData, readonly = false } : Resum
                             title={item.title} 
                             updateData={(newData?: SectionTypes[], title?: string) => updateData(item.type, newData, title)}
                             readonly={readonly}
+                            index={index}
+                            moveSection={moveSection}
                         />
             return <></>
     }
     
+    const getDraggableSection = (item: ISection, index: number) => {
+        return item.type === SectionType.HEADER ? 
+                    getSection(item, index) 
+                : 
+                <Draggable draggableId={`draggable-main-${index}`} index={index}>
+                    {(provided, snapshot) => (
+                        <div key={index}  ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
+                            {getSection(item, index)}
+                        </div>
+                    )}
+                </Draggable>
+    }
+
     const onDragEnd = (dropContext:  DropResult<string>) => {
-        if(dropContext.destination?.index! !== 0)
-        {
-            let itemToMove = data.find((item, index) => index === dropContext.source.index)!
-            let otherItems = data.filter((item, index) => index !== dropContext.source.index)
-            otherItems.splice(dropContext.destination!.index, 0, itemToMove)
-            setData([ ...otherItems])
-        }
+        if(dropContext.destination?.index! !== 0 && dropContext.source?.index !== 0)
+            moveSection(dropContext.source.index, dropContext.destination!.index)
+    }
+
+    const moveSection = (currentPosition: number, newPosition: number) => {
+        let itemToMove = data.find((item, index) => index === currentPosition)!
+        let otherItems = data.filter((item, index) => index !== currentPosition)
+        if(newPosition !== -1)
+            otherItems.splice(newPosition, 0, itemToMove)
+        setData([ ...otherItems])
     }
 
     return <div className="shadow-xl pb-15 bg-white">
         <div ref={printableContentRef}>
             {
                 readonly ?
-                    data.map((item) => {
-                            return getSection(item)
+                    data.map((item, index) => {
+                            return getSection(item, index)
                     })
                 :
                     <DragDropContext onDragEnd={onDragEnd} >
@@ -119,17 +149,10 @@ const Resume = ({ printableContentRef, data, setData, readonly = false } : Resum
                                     <>
                                         {
                                             data.map((item,index) => {
-                                                return  <Draggable draggableId={`draggable-main-${index}`} index={index}>
-                                                    {(provided, snapshot) => (
-                                                        <div key={index}  ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
-                                                            {getSection(item)}
-                                                        </div>
-                                                    )}
-                                                </Draggable>
+                                                return getDraggableSection(item, index)
                                             })
                                         }
                                     </>
-                        
                                     {dropppableProvided.placeholder}
                                 </div>
                             )}

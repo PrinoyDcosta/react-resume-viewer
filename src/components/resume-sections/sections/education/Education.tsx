@@ -12,16 +12,20 @@ interface EducationProps {
     data: Array<IEducation>
     updateData: (newData?: Array<IEducation>, title?: string) => void
     readonly?: boolean
+    index: number
+    moveSection: (currentPosition: number, newPosition: number) => void
 }
 
 const Education: FC<EducationProps> = ({
     data,
     title,
     updateData,
-    readonly
+    readonly,
+    index, 
+    moveSection
 }) => {
     const [isEditMode, setIsEditMode] = useState(false)
-    const EducationWithToolbar = withToolbar(EducationViewer, title, () => setIsEditMode(true), readonly)
+    const EducationWithToolbar = withToolbar(EducationViewer, title, () => setIsEditMode(true), index, moveSection, readonly)
 
     const updateSkills = (newData: Array<IEducation>, title?: string) => {
         let result = newData.map(item => {

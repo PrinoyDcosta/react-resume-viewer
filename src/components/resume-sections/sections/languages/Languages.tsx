@@ -12,16 +12,20 @@ interface LanguagesProps {
     data: Array<ILanguage>
     updateData: (newData?: Array<ILanguage>, title?: string) => void
     readonly?: boolean
+    index: number
+    moveSection: (currentPosition: number, newPosition: number) => void
 }
 
 const Languages: FC<LanguagesProps> = ({
     data,
     title,
     updateData,
-    readonly
+    readonly,
+    index, 
+    moveSection
 }) => {
     const [isEditMode, setIsEditMode] = useState(false)
-    const LanguagesWithToolbar = withToolbar(LanguagesViewer, title, () => setIsEditMode(true), readonly)
+    const LanguagesWithToolbar = withToolbar(LanguagesViewer, title, () => setIsEditMode(true), index, moveSection, readonly)
 
     const updateSkills = (newData: Array<ILanguage>, title?: string) => {
         updateData(newData, title)

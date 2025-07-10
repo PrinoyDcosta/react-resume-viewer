@@ -2,9 +2,10 @@ import { Button } from "../../../ui/button"
 import { ArrowDownIcon, ArrowUpIcon, PencilSquareIcon, TrashIcon } from "@heroicons/react/16/solid"
 
 
-export const withToolbar = <P extends {},>(Component : React.ComponentType<P>, title: string, setEditMode: () => void, readonly?: boolean, isHeader?: boolean) => {
+export const withToolbar = <P extends {},>(Component : React.ComponentType<P>, title: string, setEditMode: () => void, index: number, moveSection?: (currentPosition: number, newPosition: number) => void, readonly?: boolean, isHeader?: boolean) => {
     
     const ComponentWithToolBar = (props: P) => {
+
         return(<div className="group space-y-1 bg-white">
                     <div className={`border-3 p-2 ${isHeader ? "" : "px-10 "}rounded-md border-transparent ${readonly ? "" : "group-hover:border-gray-200 group-hover:duration-200 group-hover:ease-in-out"} `}>
                             {
@@ -18,9 +19,37 @@ export const withToolbar = <P extends {},>(Component : React.ComponentType<P>, t
                                             <Button className=" hover:dark:text-neutral-600 dark:bg-white dark:border-neutral-400" variant="outline" size="icon" onClick={setEditMode}>
                                                 <PencilSquareIcon/>
                                             </Button>
-                                            <Button className=" hover:dark:text-neutral-600 dark:bg-white dark:border-neutral-400" variant="outline" size="icon" onClick={() => {}}><ArrowUpIcon/></Button>
-                                            <Button className=" hover:dark:text-neutral-600 dark:bg-white dark:border-neutral-400" variant="outline" size="icon" onClick={() => {}}><ArrowDownIcon/></Button>
-                                            <Button className="text-red-600 hover:text-red-600 hover:dark:text-red-400 dark:bg-white dark:border-neutral-400" variant="outline" size="icon" onClick={() => {}}><TrashIcon/></Button>
+                                            {
+                                                !isHeader ?
+                                                <>
+                                                    <Button 
+                                                        className=" hover:dark:text-neutral-600 dark:bg-white dark:border-neutral-400" 
+                                                        variant="outline" 
+                                                        size="icon" 
+                                                        onClick={() => moveSection && moveSection(index, index-1)}
+                                                    >
+                                                        <ArrowUpIcon/>
+                                                    </Button>
+                                                    <Button 
+                                                        className=" hover:dark:text-neutral-600 dark:bg-white dark:border-neutral-400" 
+                                                        variant="outline" 
+                                                        size="icon" 
+                                                        onClick={() => moveSection && moveSection(index, index+1)}
+                                                    >
+                                                        <ArrowDownIcon/>
+                                                    </Button>
+                                                </>
+                                                : <></>
+                                            }
+                                            
+                                            <Button 
+                                                className="text-red-600 hover:text-red-600 hover:dark:text-red-400 dark:bg-white dark:border-neutral-400" 
+                                                variant="outline" 
+                                                size="icon" 
+                                                onClick={() => moveSection && moveSection(index, -1)}
+                                            >
+                                                <TrashIcon/>
+                                            </Button>
                                         </div>
                                     </div>
                             }
