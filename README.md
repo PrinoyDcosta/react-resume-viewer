@@ -2,7 +2,7 @@
 # React Resume Viewer/Builder
 
 React Resume Viewer/Builder is for users that want to embed their resumes/CV's in their portfolio websites or any other pages. This is not only a viewer but can be used as a resume builder too.
-This component is built on TailwindCSS and ShadCN.  
+This component is built on TailwindCSS, Antd and Shadcn components.  
 
 ## Demo
 
@@ -24,7 +24,7 @@ Install with npm
 | `data` | `Array<ISection>` | This prop is used to pass the initial sections to the component | No |
 | `setData` | `Funtion` | This prop should be the setState function of the data prop | No |
 | `printableContentRef` | `React.RefObject<HTMLDivElement>` | Parent prop of the component. This can be used to use the default browser print function to convert the component to a PDF. | Yes |
-| `readonly` | `boolean` | This prop if set to true will hide of edit options | Yes |
+| `readonly` | `boolean` | If set to true will hide all edit options | Yes |
 
 
 ## Usage/Examples
