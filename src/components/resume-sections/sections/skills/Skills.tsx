@@ -12,6 +12,7 @@ interface SkillsProps {
     readonly?: boolean
     index: number
     moveSection: (currentPosition: number, newPosition: number) => void
+    totalSections: number
 }
 
 const Skills: FC<SkillsProps> = ({
@@ -20,10 +21,11 @@ const Skills: FC<SkillsProps> = ({
     updateData,
     readonly,
     index, 
-    moveSection
+    moveSection,
+    totalSections
 }) => {
     const [isEditMode, setIsEditMode] = useState(false)
-    const SkillsWithToolbar = withToolbar(SkillsViewer, title, () => setIsEditMode(true), index, moveSection, readonly)
+    const SkillsWithToolbar = withToolbar(SkillsViewer, title, () => setIsEditMode(true), index, totalSections, moveSection, readonly)
 
     const updateSkills = (newData: Array<ISkills>, title?: string) => {
         updateData(newData, title)

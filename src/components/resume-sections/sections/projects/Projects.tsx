@@ -15,6 +15,7 @@ interface ProjectProps {
     readonly?: boolean
     index: number
     moveSection: (currentPosition: number, newPosition: number) => void
+    totalSections: number
 }
 
 const Project: FC<ProjectProps> = ({
@@ -23,10 +24,11 @@ const Project: FC<ProjectProps> = ({
     updateData,
     readonly,
     index, 
-    moveSection
+    moveSection,
+    totalSections
 }) => {
     const [isEditMode, setIsEditMode] = useState(false)
-    const ProjectWithToolbar = withToolbar(ProjectsViewer, title, () => setIsEditMode(true), index, moveSection, readonly)
+    const ProjectWithToolbar = withToolbar(ProjectsViewer, title, () => setIsEditMode(true), index, totalSections, moveSection, readonly)
 
     const updateSkills = (newData: Array<IProject>, title?: string) => {
         let result = newData.map(item => {

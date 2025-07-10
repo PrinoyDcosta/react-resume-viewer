@@ -14,6 +14,7 @@ interface WorkExperienceProps {
     readonly?: boolean
     index: number
     moveSection: (currentPosition: number, newPosition: number) => void
+    totalSections: number
 }
 
 const WorkExperience: FC<WorkExperienceProps> = ({
@@ -22,10 +23,11 @@ const WorkExperience: FC<WorkExperienceProps> = ({
     updateData,
     readonly,
     index, 
-    moveSection
+    moveSection,
+    totalSections
 }) => {
     const [isEditMode, setIsEditMode] = useState(false)
-    const WorkExperienceWithToolbar = withToolbar(WorkExperienceViewer, title, () => setIsEditMode(true), index, moveSection, readonly)
+    const WorkExperienceWithToolbar = withToolbar(WorkExperienceViewer, title, () => setIsEditMode(true), index, totalSections, moveSection, readonly)
 
     const updateSkills = (newData: Array<IWorkExperience>, title?: string) => {
         let result = newData.map(item => {

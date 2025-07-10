@@ -14,6 +14,7 @@ interface HeaderProps {
     readonly?: boolean
     index: number
     moveSection: (currentPosition: number, newPosition: number) => void
+    totalSections: number
 }
 
 const Header: FC<HeaderProps> = ({
@@ -22,10 +23,11 @@ const Header: FC<HeaderProps> = ({
     updateData,
     readonly,
     index,
-    moveSection
+    moveSection,
+    totalSections
 }) => {
     const [isEditMode, setIsEditMode] = useState(false)
-    const HeaderWithToolbar = withToolbar(HeaderViewer, title, () => setIsEditMode(true), index, moveSection, readonly, true)
+    const HeaderWithToolbar = withToolbar(HeaderViewer, title, () => setIsEditMode(true), index, totalSections, moveSection, readonly, true)
 
     const updateSkills = (newData: IHeader[], title?: string) => {
         updateData(newData, title)

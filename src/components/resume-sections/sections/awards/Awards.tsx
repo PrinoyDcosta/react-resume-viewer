@@ -15,6 +15,7 @@ interface AwardsProps {
     readonly?: boolean
     index: number
     moveSection: (currentPosition: number, newPosition: number) => void
+    totalSections: number
 }
 
 const Awards: FC<AwardsProps> = ({
@@ -23,10 +24,11 @@ const Awards: FC<AwardsProps> = ({
     updateData,
     readonly,
     index, 
-    moveSection
+    moveSection,
+    totalSections
 }) => {
     const [isEditMode, setIsEditMode] = useState(false)
-    const ComponentToRender = withToolbar(AwardsViewer, title, () => setIsEditMode(true), index, moveSection, readonly)
+    const ComponentToRender = withToolbar(AwardsViewer, title, () => setIsEditMode(true), index, totalSections, moveSection, readonly)
 
     const updateSkills = (newData: Array<IAwards>, title?: string) => {
         let result = newData.map(item => {

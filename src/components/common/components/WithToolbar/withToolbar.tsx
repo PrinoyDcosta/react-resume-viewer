@@ -2,7 +2,7 @@ import { Button } from "../../../ui/button"
 import { ArrowDownIcon, ArrowUpIcon, PencilSquareIcon, TrashIcon } from "@heroicons/react/16/solid"
 
 
-export const withToolbar = <P extends {},>(Component : React.ComponentType<P>, title: string, setEditMode: () => void, index: number, moveSection?: (currentPosition: number, newPosition: number) => void, readonly?: boolean, isHeader?: boolean) => {
+export const withToolbar = <P extends {},>(Component : React.ComponentType<P>, title: string, setEditMode: () => void, index: number, totalSections: number, moveSection?: (currentPosition: number, newPosition: number) => void, readonly?: boolean, isHeader?: boolean) => {
     
     const ComponentWithToolBar = (props: P) => {
 
@@ -22,22 +22,28 @@ export const withToolbar = <P extends {},>(Component : React.ComponentType<P>, t
                                             {
                                                 !isHeader ?
                                                 <>
-                                                    <Button 
-                                                        className=" hover:dark:text-neutral-600 dark:bg-white dark:border-neutral-400" 
-                                                        variant="outline" 
-                                                        size="icon" 
-                                                        onClick={() => moveSection && moveSection(index, index-1)}
-                                                    >
-                                                        <ArrowUpIcon/>
-                                                    </Button>
-                                                    <Button 
-                                                        className=" hover:dark:text-neutral-600 dark:bg-white dark:border-neutral-400" 
-                                                        variant="outline" 
-                                                        size="icon" 
-                                                        onClick={() => moveSection && moveSection(index, index+1)}
-                                                    >
-                                                        <ArrowDownIcon/>
-                                                    </Button>
+                                                    {
+                                                        index !== 0 &&
+                                                        <Button 
+                                                            className=" hover:dark:text-neutral-600 dark:bg-white dark:border-neutral-400" 
+                                                            variant="outline" 
+                                                            size="icon" 
+                                                            onClick={() => moveSection && moveSection(index, index-1)}
+                                                        >
+                                                            <ArrowUpIcon/>
+                                                        </Button>
+                                                    }
+                                                    {
+                                                        index !== (totalSections - 1) &&
+                                                        <Button 
+                                                            className=" hover:dark:text-neutral-600 dark:bg-white dark:border-neutral-400" 
+                                                            variant="outline" 
+                                                            size="icon" 
+                                                            onClick={() => moveSection && moveSection(index, index+1)}
+                                                        >
+                                                            <ArrowDownIcon/>
+                                                        </Button>
+                                                    }
                                                 </>
                                                 : <></>
                                             }

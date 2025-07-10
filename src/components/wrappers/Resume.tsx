@@ -49,6 +49,7 @@ const Resume = ({ printableContentRef, data, setData, readonly = false } : Resum
                             readonly={readonly}
                             index={index}
                             moveSection={moveSection}
+                            totalSections={data.length}
                         />
             if(item.type === SectionType.EXPERIENCE)
                 return <WorkExperience 
@@ -58,6 +59,7 @@ const Resume = ({ printableContentRef, data, setData, readonly = false } : Resum
                             readonly={readonly}
                             index={index}
                             moveSection={moveSection}
+                            totalSections={data.length}
                         />
             if(item.type === SectionType.AWARDS)
                 return <Awards 
@@ -67,6 +69,7 @@ const Resume = ({ printableContentRef, data, setData, readonly = false } : Resum
                             readonly={readonly}
                             index={index}
                             moveSection={moveSection}
+                            totalSections={data.length}
                         />
             if(item.type === SectionType.EDUCATION)
                 return <Education 
@@ -76,6 +79,7 @@ const Resume = ({ printableContentRef, data, setData, readonly = false } : Resum
                             readonly={readonly}
                             index={index}
                             moveSection={moveSection}
+                            totalSections={data.length}
                         />
             if(item.type === SectionType.LANGUAGES)
                 return <Languages 
@@ -85,6 +89,7 @@ const Resume = ({ printableContentRef, data, setData, readonly = false } : Resum
                             readonly={readonly}
                             index={index}
                             moveSection={moveSection}
+                            totalSections={data.length}
                         />
             if(item.type === SectionType.PROJECTS)
                 return <Project 
@@ -94,6 +99,7 @@ const Resume = ({ printableContentRef, data, setData, readonly = false } : Resum
                             readonly={readonly}
                             index={index}
                             moveSection={moveSection}
+                            totalSections={data.length}
                         />
             if(item.type === SectionType.HEADER)
                 return <Header 
@@ -103,6 +109,7 @@ const Resume = ({ printableContentRef, data, setData, readonly = false } : Resum
                             readonly={readonly}
                             index={index}
                             moveSection={moveSection}
+                            totalSections={data.length}
                         />
             return <></>
     }
