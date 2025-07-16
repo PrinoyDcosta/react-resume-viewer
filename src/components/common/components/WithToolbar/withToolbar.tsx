@@ -44,18 +44,18 @@ export const withToolbar = <P extends {},>(Component : React.ComponentType<P>, t
                                                             <ArrowDownIcon/>
                                                         </Button>
                                                     }
+                                                    <Button 
+                                                        className="text-red-600 hover:text-red-600 hover:dark:text-red-400 dark:bg-white dark:border-neutral-400" 
+                                                        variant="outline" 
+                                                        size="icon" 
+                                                        onClick={() => moveSection && moveSection(index, -1)}
+                                                    >
+                                                        <TrashIcon/>
+                                                    </Button>
                                                 </>
                                                 : <></>
                                             }
                                             
-                                            <Button 
-                                                className="text-red-600 hover:text-red-600 hover:dark:text-red-400 dark:bg-white dark:border-neutral-400" 
-                                                variant="outline" 
-                                                size="icon" 
-                                                onClick={() => moveSection && moveSection(index, -1)}
-                                            >
-                                                <TrashIcon/>
-                                            </Button>
                                         </div>
                                     </div>
                             }
