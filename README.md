@@ -22,7 +22,7 @@ Install with npm
 | prop | Type     | Description                | optional? |
 | :-------- | :------- | :------------------------- | :------- |
 | `data` | `Array<ISection>` | This prop is used to pass the initial sections to the component | No |
-| `setData` | `Funtion` | This prop should be the setState function of the data prop | No |
+| `setData` | `Function` | This prop should be the setState function of the data prop | No |
 | `printableContentRef` | `React.RefObject<HTMLDivElement>` | Parent prop of the component. This can be used to use the default browser print function to convert the component to a PDF. | Yes |
 | `readonly` | `boolean` | If set to true will hide all edit options | Yes |
 
