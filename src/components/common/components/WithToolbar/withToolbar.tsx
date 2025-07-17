@@ -23,7 +23,7 @@ export const withToolbar = <P extends {},>(Component : React.ComponentType<P>, t
                                                 !isHeader ?
                                                 <>
                                                     {
-                                                        index !== 0 &&
+                                                        index !== 1 &&
                                                         <Button 
                                                             className=" hover:dark:text-neutral-600 dark:bg-white dark:border-neutral-400" 
                                                             variant="outline" 
