@@ -17,25 +17,33 @@ const HeaderViewer: FC<HeaderViewerProps> = ({
                         <h1 className='flex justify-center text-2xl text-gray-600 font-bold'>
                             {first(data)!.fullName}
                         </h1>
-                        <div className="flex justify-center gap-2 pt-1">
-                            <h1>{first(data)!.location}</h1>
+                        <p className="flex justify-center flex-wrap font-light">
+                            {first(data)!.location}
+                            &nbsp;
                             &#x2022;
-                            <h1>{first(data)!.email}</h1>
+                            &nbsp;
+                            {first(data)!.email}
+                            &nbsp;
                             &#x2022;
-                            <h1>{first(data)!.phoneNumber}</h1>
+                            &nbsp;
+                            {first(data)!.phoneNumber}
                             {
                                 !isEmpty(first(data)!.linkedinUrl) && <>
+                                    &nbsp;
                                     &#x2022;
+                                    &nbsp;
                                     <a href={first(data)!.linkedinUrl} target='_blank'>{first(data)!.linkedinUrl}</a>
                                 </>
                             }
                             {
-                                !isEmpty(first(data)!.linkedinUrl) && <>
+                                !isEmpty(first(data)!.githubUrl) && <>
+                                    &nbsp;
                                     &#x2022;
+                                    &nbsp;
                                     <a href={first(data)!.githubUrl} target='_blank'>{first(data)!.githubUrl}</a>
                                 </>
                             }
-                        </div>
+                        </p>
                     </div>
                 : <></>
             }
