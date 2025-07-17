@@ -4,6 +4,7 @@ import DatePicker from 'antd/es/date-picker'
 import dayjs from "dayjs"
 import { FC } from "react"
 import { IProject } from "../../../common/constants/section-consts"
+import InputList from '../../../common/components/InputList/InputList'
 
 export interface IProjectFormFieldProps {
     field?: IProject,
@@ -73,7 +74,8 @@ const ProjectFormFields: FC<IProjectFormFieldProps> = ({
                     rules={[{ required: true, message: 'Please enter the description!' }]}
                     initialValue={field.description}
                 >
-                    <Input placeholder="Enter project description"/>
+                    {/* <Input placeholder="Enter project description"/> */}
+                    <InputList />
                 </Form.Item>
     </>
 }

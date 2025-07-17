@@ -54,7 +54,7 @@ export interface IProject {
     projectUrl: string
     dateFrom: string
     dateTo: string
-    description: string // need to use tailwind richtexteditor
+    description: string[] // need to use tailwind richtexteditor
 }
 
 

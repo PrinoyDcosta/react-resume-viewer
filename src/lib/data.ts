@@ -135,14 +135,20 @@ import { IAwards, IEducation, IHeader, ILanguage, IProject, ISkills, IWorkExperi
         "projectUrl": "https://github.com/PrinoyDcosta/aternos-auto-confirm-extension",
         "dateFrom": "May 2025",
         "dateTo": "Jun 2025",
-        "description": "Developed a Chrome extension to auto-confirm Aternos Minecraft server queues, eliminating manual intervention and ensuring 100% automated server activation.",
+        "description": [
+            "Developed a Chrome extension to auto-confirm Aternos Minecraft server queues, eliminating manual intervention and ensuring 100% automated server activation.",
+            "Gained 300+ active users, solving the repetitive confirmation problem and reducing wait times for seamless gameplay."
+        ],
     },
     {
         "projectTitle": "React Resume Builder/Viewer",
         "projectUrl": "https://github.com/PrinoyDcosta/react-resume-viewer",
         "dateFrom": "Mar 2025",
         "dateTo": "Mar 2025",
-        "description": "Developed a React resume builder with TypeScript, TailwindCSS & ShadCN, featuring dynamic forms, real-time previews, and PDF export for seamless resume creation.",
+        "description": [
+            "Developed a React resume builder with TypeScript, TailwindCSS & ShadCN, featuring dynamic forms, real-time previews, and PDF export for seamless resume creation.",
+            "Published as an npm package and hosted demo page using Vercel, gaining 870+ downloads, showcasing rapid developer adoption."
+        ],
     }]
 
     const headerData: IHeader[] = [{
